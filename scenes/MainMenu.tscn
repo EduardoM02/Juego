@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm67eq5sg8283"]
+
+[ext_resource type="Texture2D" uid="uid://wgfdbj7is656" path="res://Vector/Blue/button_rectangle_depth_border.svg" id="1_70bww"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="ButtonRectangleDepthBorder" type="Sprite2D" parent="."]
+position = Vector2(365, 924)
+texture = ExtResource("1_70bww")
