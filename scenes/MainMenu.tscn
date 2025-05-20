@@ -1,9 +1,199 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm67eq5sg8283"]
+[gd_scene load_steps=7 format=3 uid="uid://bm67eq5sg8283"]
 
 [ext_resource type="Texture2D" uid="uid://wgfdbj7is656" path="res://Vector/Blue/button_rectangle_depth_border.svg" id="1_70bww"]
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_frcx1"]
+
+[sub_resource type="Animation" id="Animation_4dlvc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("btnPuntuacion:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ds6wd"]
+resource_name = "btn_appear"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("btnJugar:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.57628e-07, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("btnPuntuacion:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.166667, 0.666667, 1.16667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("btnSalir:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.333334, 0.833333, 1.33333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j1jhf"]
+resource_name = "btn_hidde_show"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("btnJugar:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(0.9, 0.9), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("btnPuntuacion:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.433333, 0.8, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(0.9, 0.9), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("btnSalir:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.233333, 0.566667, 0.933333, 1.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(0.9, 0.9), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7jx1u"]
+_data = {
+"RESET": SubResource("Animation_4dlvc"),
+"btn_appear": SubResource("Animation_ds6wd"),
+"btn_hidde_show": SubResource("Animation_j1jhf")
+}
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_frcx1")
 
-[node name="ButtonRectangleDepthBorder" type="Sprite2D" parent="."]
-position = Vector2(365, 924)
-texture = ExtResource("1_70bww")
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(720, 1280)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -9.0
+offset_right = 723.0
+offset_bottom = 1271.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="btnJugar" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 160.0
+offset_top = 510.0
+offset_right = 560.0
+offset_bottom = 650.0
+scale = Vector2(-8.58308e-07, -8.58308e-07)
+pivot_offset = Vector2(200, 70)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Jugar
+"
+icon = ExtResource("1_70bww")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="btnPuntuacion" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 770.0
+offset_right = 560.0
+offset_bottom = 910.0
+pivot_offset = Vector2(200, 70)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Puntos"
+icon = ExtResource("1_70bww")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="btnSalir" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 160.0
+offset_top = 1020.0
+offset_right = 560.0
+offset_bottom = 1160.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(200, 70)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Salir"
+icon = ExtResource("1_70bww")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+libraries = {
+"": SubResource("AnimationLibrary_7jx1u")
+}
+autoplay = "btn_appear"
+
+[connection signal="pressed" from="Control/btnJugar" to="." method="_on_btn_jugar_pressed"]
+[connection signal="pressed" from="Control/btnPuntuacion" to="." method="_on_btn_puntuacion_pressed"]
+[connection signal="pressed" from="Control/btnSalir" to="." method="_on_btn_salir_pressed"]

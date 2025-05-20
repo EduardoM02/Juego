@@ -1,3 +1,134 @@
-[gd_scene format=3 uid="uid://clc1ic8mal0vd"]
+[gd_scene load_steps=5 format=3 uid="uid://clc1ic8mal0vd"]
 
-[node name="QuickMode" type="Node2D"]
+[ext_resource type="Script" path="res://scripts/QuickMode.gd" id="1_bpk3c"]
+[ext_resource type="Texture2D" uid="uid://bh8jvgfsrusc1" path="res://Vector/Blue/button_rectangle_depth_flat.svg" id="1_kr5oe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpc1s"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bk7fr"]
+bg_color = Color(0, 0.454015, 0.496238, 1)
+
+[node name="QuickMode" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bpk3c")
+
+[node name="ProgressBarTiempo" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 1.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/background = SubResource("StyleBoxFlat_mpc1s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bk7fr")
+max_value = 15.0
+value = 15.0
+show_percentage = false
+
+[node name="LabelPuntos" type="Label" parent="."]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 84.0
+offset_right = 460.0
+offset_bottom = 184.0
+pivot_offset = Vector2(100, 50)
+theme_override_font_sizes/font_size = 60
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelOperacion" type="Label" parent="."]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 350.0
+offset_right = 539.0
+offset_bottom = 450.0
+pivot_offset = Vector2(175, 50)
+theme_override_font_sizes/font_size = 65
+text = "5 + 8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnOpcion1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 820.0
+offset_right = 340.0
+offset_bottom = 970.0
+pivot_offset = Vector2(150, 75)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "13"
+icon = ExtResource("1_kr5oe")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="btnOpcion2" type="Button" parent="."]
+offset_left = 380.0
+offset_top = 820.0
+offset_right = 680.0
+offset_bottom = 970.0
+pivot_offset = Vector2(150, 75)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("1_kr5oe")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="btnOpcion3" type="Button" parent="."]
+offset_left = 40.0
+offset_top = 1000.0
+offset_right = 340.0
+offset_bottom = 1150.0
+pivot_offset = Vector2(150, 75)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("1_kr5oe")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="btnOpcion4" type="Button" parent="."]
+offset_left = 380.0
+offset_top = 1000.0
+offset_right = 680.0
+offset_bottom = 1150.0
+pivot_offset = Vector2(150, 75)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("1_kr5oe")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="TimerPregunta" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
