@@ -1,7 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://clc1ic8mal0vd"]
+[gd_scene load_steps=13 format=3 uid="uid://clc1ic8mal0vd"]
 
 [ext_resource type="Script" path="res://scripts/QuickMode.gd" id="1_bpk3c"]
 [ext_resource type="Texture2D" uid="uid://bh8jvgfsrusc1" path="res://Vector/Blue/button_rectangle_depth_flat.svg" id="1_kr5oe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l38yv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Animation" id="Animation_ysmfo"]
+length = 0.7
+
+[sub_resource type="Animation" id="Animation_f50hm"]
+resource_name = "gameover_bounce"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ControlPopup:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ControlPopup/GameOverPopup/VBoxContainer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ControlPopup/GameOverPopup/VBoxContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8c3jk"]
+_data = {
+"RESET": SubResource("Animation_ysmfo"),
+"gameover_bounce": SubResource("Animation_f50hm")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpc1s"]
 bg_color = Color(1, 1, 1, 1)
@@ -9,17 +60,325 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bk7fr"]
 bg_color = Color(0, 0.454015, 0.496238, 1)
 
+[sub_resource type="Animation" id="Animation_sii3r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelOperacion:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("btnOpcion1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LabelOperacion:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sjev0"]
+resource_name = "fade_in_bounce"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelOperacion:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LabelOperacion:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("btnOpcion1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("btnOpcion1:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("btnOpcion2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("btnOpcion2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("btnOpcion3:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("btnOpcion3:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("btnOpcion4:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("btnOpcion4:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d4ubf"]
+resource_name = "fade_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelOperacion:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("btnOpcion1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("btnOpcion2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("btnOpcion3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("btnOpcion4:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hc6oc"]
+_data = {
+"RESET": SubResource("Animation_sii3r"),
+"fade_in_bounce": SubResource("Animation_sjev0"),
+"fade_out": SubResource("Animation_d4ubf")
+}
+
 [node name="QuickMode" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_bpk3c")
+
+[node name="ControlPopup" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchor_left = 0.21
+anchor_top = 0.416
+anchor_right = 0.793
+anchor_bottom = 0.588
+offset_left = -0.200012
+offset_top = 0.52002
+offset_right = 0.039978
+offset_bottom = 0.359985
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(210, 110)
+
+[node name="GameOverPopup" type="PopupPanel" parent="ControlPopup"]
+sdf_scale = 2
+initial_position = 1
+size = Vector2i(500, 300)
+content_scale_mode = 1
+content_scale_aspect = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_l38yv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlPopup/GameOverPopup"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 500.0
+offset_bottom = 300.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(206, 106)
+
+[node name="Label" type="Label" parent="ControlPopup/GameOverPopup/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "¡Fin del Juego!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelPuntajeFinal" type="Label" parent="ControlPopup/GameOverPopup/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ControlPopup/GameOverPopup/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonVolver" type="Button" parent="ControlPopup/GameOverPopup/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Volver
+"
+icon = ExtResource("1_kr5oe")
+flat = true
+icon_alignment = 1
+
+[node name="ButtonrReintentar" type="Button" parent="ControlPopup/GameOverPopup/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Reintentar
+"
+icon = ExtResource("1_kr5oe")
+flat = true
+icon_alignment = 1
+
+[node name="AnimationPlayerGameOver" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8c3jk")
+}
 
 [node name="ProgressBarTiempo" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_right = 1.0
-offset_bottom = 60.0
+offset_bottom = 50.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
 theme_override_styles/background = SubResource("StyleBoxFlat_mpc1s")
@@ -30,13 +389,13 @@ show_percentage = false
 
 [node name="LabelPuntos" type="Label" parent="."]
 layout_mode = 0
-offset_left = 260.0
+offset_left = 215.0
 offset_top = 84.0
-offset_right = 460.0
+offset_right = 505.0
 offset_bottom = 184.0
-pivot_offset = Vector2(100, 50)
+pivot_offset = Vector2(145, 50)
 theme_override_font_sizes/font_size = 60
-text = "10"
+text = "Puntos 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -52,83 +411,106 @@ text = "5 + 8"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="btnOpcion1" type="Button" parent="."]
+[node name="btnOpcion1" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 820.0
 offset_right = 340.0
 offset_bottom = 970.0
 pivot_offset = Vector2(150, 75)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+texture_normal = ExtResource("1_kr5oe")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="btnOpcion1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "13"
-icon = ExtResource("1_kr5oe")
-flat = true
-icon_alignment = 1
-expand_icon = true
+theme_override_font_sizes/font_size = 75
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="btnOpcion2" type="Button" parent="."]
+[node name="btnOpcion2" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 380.0
 offset_top = 820.0
 offset_right = 680.0
 offset_bottom = 970.0
 pivot_offset = Vector2(150, 75)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-icon = ExtResource("1_kr5oe")
-flat = true
-icon_alignment = 1
-expand_icon = true
+texture_normal = ExtResource("1_kr5oe")
+stretch_mode = 0
 
-[node name="btnOpcion3" type="Button" parent="."]
+[node name="Label" type="Label" parent="btnOpcion2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnOpcion3" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 1000.0
 offset_right = 340.0
 offset_bottom = 1150.0
 pivot_offset = Vector2(150, 75)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-icon = ExtResource("1_kr5oe")
-flat = true
-icon_alignment = 1
-expand_icon = true
+texture_normal = ExtResource("1_kr5oe")
+stretch_mode = 0
 
-[node name="btnOpcion4" type="Button" parent="."]
+[node name="Label" type="Label" parent="btnOpcion3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnOpcion4" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 380.0
 offset_top = 1000.0
 offset_right = 680.0
 offset_bottom = 1150.0
 pivot_offset = Vector2(150, 75)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+texture_normal = ExtResource("1_kr5oe")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="btnOpcion4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-icon = ExtResource("1_kr5oe")
-flat = true
-icon_alignment = 1
-expand_icon = true
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TimerPregunta" type="Timer" parent="."]
 wait_time = 15.0
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hc6oc")
+}

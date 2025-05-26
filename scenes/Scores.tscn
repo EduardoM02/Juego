@@ -1,3 +1,74 @@
-[gd_scene format=3 uid="uid://4j1d4isqwmca"]
+[gd_scene load_steps=3 format=3 uid="uid://4j1d4isqwmca"]
 
-[node name="Scores" type="Node2D"]
+[ext_resource type="Script" path="res://scripts/scores.gd" id="1_fxm67"]
+[ext_resource type="Texture2D" uid="uid://bh8jvgfsrusc1" path="res://Vector/Blue/button_rectangle_depth_flat.svg" id="2_56a4l"]
+
+[node name="Scores" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fxm67")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="contenedor_tabla" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainer/contenedor_tabla"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/contenedor_tabla"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/contenedor_tabla"]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/contenedor_tabla"]
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/contenedor_tabla"]
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/contenedor_tabla"]
+layout_mode = 2
+
+[node name="btn_menu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -190.0
+offset_right = 200.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(200, 70)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "Volver"
+icon = ExtResource("2_56a4l")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="btn_menu" to="." method="_on_btn_menu_pressed"]
